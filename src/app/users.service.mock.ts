@@ -5,9 +5,9 @@ export class MockUsersService{
 
   getAllUsers(): Observable<User[]>{
     return of([
-      new User('valentina','valentina@gmx.de','asas'),
-      new User('nicolas','nicolas@gmx.de','asas'),
-      new User('zulema','zule@gmx.de','asas'),
+      new User('valentina','valentina@gmx.de','12345678'),
+      new User('nicolas','nicolas@gmx.de','12345678'),
+      new User('zulema','zule@gmx.de','12345678'),
     ]);
   }
 

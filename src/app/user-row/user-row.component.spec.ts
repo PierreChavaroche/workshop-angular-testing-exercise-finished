@@ -18,7 +18,7 @@ describe('UserRowComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(UserRowComponent);
     component = fixture.componentInstance;
-    component.user = new User('nicolas', 'nicolas@gmx.de','asass');
+    component.user = new User('nicolas', 'nicolas@gmx.de','12345678s');
     fixture.detectChanges();
   });
 
