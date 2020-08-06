@@ -3,9 +3,9 @@ import { By }              from '@angular/platform-browser';
 import { DebugElement }    from '@angular/core';
 
 import { UserListComponent } from './user-list.component';
-import { UserRowComponent } from './../user-row/user-row.component';
-import { UsersService } from './../users.service';
-import { MockUsersService } from './../users.service.mock';
+import { UserRowComponent } from '../user-row/user-row.component';
+import { UsersService } from '../users.service';
+import { MockUsersService } from '../users.service.mock';
 
 describe('UserListComponent', () => {
   let component: UserListComponent;
@@ -31,7 +31,7 @@ describe('UserListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should be created', () => {
+  it('should be created with users', () => {
     expect(component.users.length).toEqual(3);
   });
 
