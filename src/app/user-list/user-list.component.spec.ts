@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By }              from '@angular/platform-browser';
+import { DebugElement }    from '@angular/core';
 
 import { UserListComponent } from './user-list.component';
+import { UserRowComponent } from './../user-row/user-row.component';
+import { UsersService } from './../users.service';
+import { MockUsersService } from './../users.service.mock';
 
 describe('UserListComponent', () => {
   let component: UserListComponent;
@@ -8,7 +13,10 @@ describe('UserListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserListComponent ]
+      declarations: [ UserListComponent, UserRowComponent ],
+      providers: [
+        { provide: UsersService, useClass: MockUsersService },
+      ]
     })
     .compileComponents();
   }));
@@ -21,5 +29,26 @@ describe('UserListComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should be created', () => {
+    expect(component.users.length).toEqual(3);
+  });
+
+  it('should selectedUser be firts items the array', () => {
+    expect(component.selectedUser.name).toEqual('valentina');
+  });
+
+  it('should have an app-user-row', () => {
+    let de = fixture.debugElement.query(By.css('app-user-row'));
+    expect(de).toBeTruthy();
+  });
+
+  it('should raise selected event when clicked', () => {
+    let button  = fixture.debugElement.query(By.css('app-user-row .btn-selected')); // find user element
+    button.triggerEventHandler('click', null);
+    fixture.detectChanges();
+    // selected user should be the same data bound user
+    expect(component.selectedUser.name).toEqual('valentina');
   });
 });
