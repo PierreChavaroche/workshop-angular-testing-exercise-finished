@@ -18,7 +18,7 @@ describe('UserRowComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(UserRowComponent);
     component = fixture.componentInstance;
-    component.user = new User('nicolas', 'nicolas@a.co','asass');
+    component.user = new User('nicolas', 'nicolas@gmx.de','asass');
     fixture.detectChanges();
   });
 
@@ -61,7 +61,7 @@ describe('UserRowComponent', () => {
     //Act
     fixture.detectChanges();
     //Assert
-    expect(el.textContent).toEqual('nicolas@a.co');
+    expect(el.textContent).toEqual('nicolas@gmx.de');
   });
 
   it('should raise selected event when clicked', ()=>{
