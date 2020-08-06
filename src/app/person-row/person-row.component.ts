@@ -7,7 +7,7 @@ import { Person } from '../person';
   styleUrls: ['./person-row.component.scss']
 })
 export class PersonRowComponent implements OnInit {
-  // @Input() person: Person;
+  @Input() person: Person;
 
   constructor() { }
 
