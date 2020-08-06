@@ -62,8 +62,6 @@ describe('PersonRowComponent', () => {
   it("should the age be '23' in template", ()=>{
     let de = fixture.debugElement.query(By.css('.person-age'));
     let element = de.nativeElement;
-
-    //component.name = 'otro nombre';
     
     fixture.detectChanges();
     expect(element.textContent).toEqual('Ihr Alter: 23');
