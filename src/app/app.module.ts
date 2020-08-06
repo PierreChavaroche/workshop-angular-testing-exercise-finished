@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { PersonRowComponent } from './person-row/person-row.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserRowComponent } from './user-row/user-row.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonRowComponent,
-    UserListComponent
+    UserRowComponent,
+    UserListComponent,
   ],
   imports: [
     BrowserModule,
