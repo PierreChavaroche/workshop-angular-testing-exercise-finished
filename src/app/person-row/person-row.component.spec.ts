@@ -10,7 +10,7 @@ describe('PersonRowComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PersonRowComponent ], // declare the test component
+      declarations: [ PersonRowComponent ] // declare the test component
     })
     .compileComponents();
   }));
